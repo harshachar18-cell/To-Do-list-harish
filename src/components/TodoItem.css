@@ -1,0 +1,196 @@
+.todo-item {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: var(--border-radius);
+  padding: 1rem 1.25rem;
+  transition: all 0.3s ease;
+  animation: slideInRight 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.todo-item:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow);
+  transform: translateX(5px);
+}
+
+.todo-item.completed {
+  opacity: 0.7;
+  background: #f9fafb;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--gray);
+}
+
+.todo-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.todo-checkbox {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  accent-color: var(--primary-color);
+}
+
+.todo-text-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.todo-text {
+  font-size: 1rem;
+  color: var(--dark);
+  word-break: break-word;
+}
+
+.priority-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.edit-form {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.edit-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  outline: none;
+}
+
+.edit-priority {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.5rem 0.75rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f3f4f6;
+  color: var(--dark);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-edit {
+  color: var(--primary-color);
+}
+
+.btn-edit:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.btn-edit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-delete {
+  color: var(--danger-color);
+}
+
+.btn-delete:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.btn-save {
+  color: var(--success-color);
+  font-size: 1.3rem;
+}
+
+.btn-save:hover {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.btn-cancel {
+  color: var(--danger-color);
+  font-size: 1.3rem;
+}
+
+.btn-cancel:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+@media (max-width: 768px) {
+  .todo-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .todo-left {
+    width: 100%;
+  }
+
+  .todo-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .edit-form {
+    width: 100%;
+  }
+
+  .edit-input {
+    width: 100%;
+  }
+}

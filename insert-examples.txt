@@ -1,0 +1,70 @@
+// SIMPLE MONGODB INSERT EXAMPLES
+// Copy and paste these into your Node.js scripts
+
+// ============================================
+// METHOD 1: Insert One Document
+// ============================================
+
+db.todos.insertOne({
+    text: "Learn JavaScript",
+    completed: false,
+    priority: "high",
+    createdAt: new Date()
+})
+
+// ============================================
+// METHOD 2: Insert Multiple Documents
+// ============================================
+
+db.todos.insertMany([
+    {
+        text: "Task 1",
+        completed: false,
+        priority: "low",
+        createdAt: new Date()
+    },
+    {
+        text: "Task 2",
+        completed: true,
+        priority: "medium",
+        createdAt: new Date()
+    },
+    {
+        text: "Task 3",
+        completed: false,
+        priority: "high",
+        createdAt: new Date()
+    }
+])
+
+// ============================================
+// METHOD 3: Insert with All Fields
+// ============================================
+
+db.todos.insertOne({
+    text: "Complete assignment",
+    completed: false,
+    priority: "high",
+    createdAt: new Date(),
+    dueDate: new Date("2025-12-31"),
+    tags: ["important", "urgent"]
+})
+
+// ============================================
+// METHOD 4: Insert Many Different Priorities
+// ============================================
+
+db.todos.insertMany([
+    { text: "High priority task", completed: false, priority: "high", createdAt: new Date() },
+    { text: "Medium priority task", completed: false, priority: "medium", createdAt: new Date() },
+    { text: "Low priority task", completed: false, priority: "low", createdAt: new Date() }
+])
+
+// ============================================
+// METHOD 5: Insert Completed Tasks
+// ============================================
+
+db.todos.insertMany([
+    { text: "Already done task 1", completed: true, priority: "high", createdAt: new Date() },
+    { text: "Already done task 2", completed: true, priority: "medium", createdAt: new Date() }
+])
